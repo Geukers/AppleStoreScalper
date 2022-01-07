@@ -1,12 +1,17 @@
+import datetime
 import time
 
-from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 import smtplib
 from email.message import EmailMessage
 
-URL = "https://www.apple.com/ca_edu_93120/shop/buy-mac/macbook-pro/14-inch-space-grey-8-core-cpu-14-core-gpu-512gb#"
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+
+# URL = "https://www.apple.com/ca_edu_93120/shop/buy-mac/macbook-pro/14-inch-space-grey-8-core-cpu-14-core-gpu-512gb#"
+URL = "https://www.apple.com/ca/shop/buy-mac/macbook-air/space-grey-apple-m1-chip-with-8-core-cpu-and-7-core-gpu-256gb#"
 
 
 def send_email(text):
@@ -34,16 +39,18 @@ def send_email(text):
 
 
 if __name__ == '__main__':
-
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
     while True:
-        driver = webdriver.Chrome("C:\\Users\\Philippe Geukers\\Downloads\\chromedriver_win32\\chromedriver.exe")
+        # p = Path(__file__).with_name('chromedriver.exe')
+        # print(p)
+        # driver = webdriver.Chrome(p)
         driver.get(URL)
 
         time.sleep(1)
 
         driver.find_element(by=By.CLASS_NAME, value="as-retailavailabilitytrigger-infobutton").click()
         inputElement = driver.find_element(by=By.ID, value="as-retailavailabilitysearch-query")
-        inputElement.send_keys('J5R6H8')
+        inputElement.send_keys('J4Y0L3')
         driver.find_element(by=By.CLASS_NAME, value="search-stores").click()
 
         time.sleep(1)
@@ -58,11 +65,12 @@ if __name__ == '__main__':
             text = ""
             for store in available_stores:
                 text += store + "\n"
-            print("Found at :")
+            print(str(datetime.datetime.now()))
             print(text)
             send_email(text)
             driver.quit()
             break
+        print(str(datetime.datetime.now()) + " : No available MacBooks")
+        time.sleep(10)
+    driver.quit()
 
-        driver.quit()
-        time.sleep(60 * 15)
