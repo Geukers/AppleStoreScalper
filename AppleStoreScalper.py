@@ -6,8 +6,7 @@ from selenium.webdriver.common.by import By
 import smtplib
 from email.message import EmailMessage
 
-# URL = "https://www.apple.com/ca_edu_93120/shop/buy-mac/macbook-pro/14-inch-space-grey-8-core-cpu-14-core-gpu-512gb#"
-URL = "https://www.apple.com/ca_edu_93120/shop/buy-mac/macbook-air/space-grey-apple-m1-chip-with-8-core-cpu-and-7-core-gpu-256gb#"
+URL = "https://www.apple.com/ca_edu_93120/shop/buy-mac/macbook-pro/14-inch-space-grey-8-core-cpu-14-core-gpu-512gb#"
 
 
 def send_email(text):
