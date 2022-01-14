@@ -68,6 +68,7 @@ if __name__ == '__main__':
                 for store in available_stores:
                     text += NAME + " : " + store + "\n"
                 print(str(datetime.datetime.now()))
+                text = text + "Order now : " + URL
                 print(text)
                 send_email(text)
                 notFound = False
