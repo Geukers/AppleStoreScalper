@@ -20,7 +20,7 @@ def send_email(text):
     SMTP_PASSWORD = '<PWD>'
 
     FROM = SMTP_LOGIN
-    TO = ["philippe.geukers.1@ens.etsmtl.ca"]  # must be a list
+    TO = ["RECEIVER_EMAIL"]  # must be a list 
     SUBJECT = 'The Macbook Pro is available'
     message = text + "Order now : " + URLs
 
