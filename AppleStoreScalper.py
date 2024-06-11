@@ -16,8 +16,8 @@ URLs = {"Space Grey": "https://www.apple.com/ca/shop/buy-mac/macbook-pro/14-inch
 
 def send_email(text):
     SMTP_SERVER = 'smtp-mail.outlook.com'
-    SMTP_LOGIN = 'geukers@outlook.com'
-    SMTP_PASSWORD = 'F3YKLb2FLWv6B93!k2*o!PO8@BLkYy!MpuYCgkSc*mebW%D^9O2t&8B3%6&rXvuT'
+    SMTP_LOGIN = '<EMAIL>'
+    SMTP_PASSWORD = '<PWD>'
 
     FROM = SMTP_LOGIN
     TO = ["philippe.geukers.1@ens.etsmtl.ca"]  # must be a list
