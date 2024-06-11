@@ -15,11 +15,11 @@ URLs = {"Clic santé": "https://portal3.clicsante.ca/"}
 
 def send_email(subject, text):
     SMTP_SERVER = 'smtp-mail.outlook.com'
-    SMTP_LOGIN = '<EMAIL'
+    SMTP_LOGIN = '<SENDER_EMAIL'
     SMTP_PASSWORD = '<PWD>'
 
     FROM = SMTP_LOGIN
-    TO = ["philippe.geukers.1@ens.etsmtl.ca"]  # must be a list
+    TO = ["RECEIVER_EMAIL"]  # must be a list
 
     message = text
 
